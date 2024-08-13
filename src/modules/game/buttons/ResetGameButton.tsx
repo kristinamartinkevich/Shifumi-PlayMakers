@@ -20,9 +20,7 @@ function ResetGameButton() {
     }
 
     return (
-        <div className='row justify-content-center'>
-            <button className='button col-auto' onClick={() => restartGame()}>Reset Game</button>
-        </div>
+        <button className='reset-button' onClick={() => restartGame()}>Reset Game</button>
     );
 };
 

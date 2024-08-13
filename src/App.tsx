@@ -12,28 +12,33 @@ function App() {
   } = useRPSState();
 
   return (
-    <div className='main-container'>
-      <div className='row justify-content-end align-items-center'>
-        <div className='col-auto'>
-          <ResetGameButton />
+    <>
+      <nav className="navbar fixed-bottom bg-light">
+        <nav className="navbar navbar-expand-lg bg-light">
+          <div className="container-fluid">
+            <ResetGameButton />
+          </div>
+        </nav>
+
+      </nav>
+      <div className='main-container my-5'>
+        <div className='row justify-content-center'>
+          <div className='col-auto'>
+            <ScoreBoard />
+          </div>
         </div>
-      </div>
-      <div className='row justify-content-center'>
-        <div className='col-auto'>
-          <ScoreBoard />
+        <div className='row justify-content-center my-3'>
+          <div className='col-auto'>
+            <MyPlayerButtons />
+          </div>
         </div>
+        {gameResult && (
+          <>
+            <RoundResults />
+          </>
+        )}
       </div>
-      <div className='row justify-content-center my-3'>
-        <div className='col-auto'>
-          <MyPlayerButtons />
-        </div>
-      </div>
-      {gameResult && (
-        <>
-          <RoundResults />
-        </>
-      )}
-    </div>
+    </>
   )
 }
 
