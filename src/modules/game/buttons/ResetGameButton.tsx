@@ -1,28 +1,29 @@
 import { useOpponentScore, usePlayersScore, useRPSState } from '../../../store';
 
-function RestartButton() {
-
-    const resetPlayersScore = usePlayersScore((state) => state.resetPlayersScore)
+function ResetGameButton() {
+    const resetPlayersScore = usePlayersScore((state) => state.resetPlayersScore);
     const resetOpponentScore = useOpponentScore((state) => state.resetOpponentScore);
 
 
     const {
         setPlayersPick,
         setOpponentsPick,
-        setGameResult,
+        setGameResult
     } = useRPSState();
 
     function restartGame() {
         setPlayersPick(undefined);
         setOpponentsPick(undefined);
         setGameResult(undefined);
-        resetPlayersScore;
-        resetOpponentScore;
+        resetPlayersScore();
+        resetOpponentScore();
     }
 
     return (
-        <button className='button' onClick={() => restartGame()}>Reset</button>
+        <div className='row justify-content-center'>
+            <button className='button col-auto' onClick={() => restartGame()}>Reset Game</button>
+        </div>
     );
 };
 
-export default RestartButton;
+export default ResetGameButton;

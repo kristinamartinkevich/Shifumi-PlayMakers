@@ -10,19 +10,29 @@ interface RPSState {
     setGameResult: (result: string | undefined) => void;
 }
 
-export const usePlayersScore = create((set) => ({
+interface PlayersScoreState {
+    score: number;
+    increasePlayersScore: () => void;
+    resetPlayersScore: () => void;
+}
+
+interface OpponentScoreState {
+    score: number;
+    increaseOpponentScore: () => void;
+    resetOpponentScore: () => void;
+}
+
+export const usePlayersScore = create<PlayersScoreState>((set) => ({
     score: 0,
     increasePlayersScore: () => set((state) => ({ score: state.score + 1 })),
-    decreasePlayersScore: () => set((state) => ({ score: state.score - 1 })),
-    resetPlayersScore: () => set((state) => ({ score: state.score = 0 })),
-}))
+    resetPlayersScore: () => set(() => ({ score: 0 })),
+}));
 
-export const useOpponentScore = create((set) => ({
+export const useOpponentScore = create<OpponentScoreState>((set) => ({
     score: 0,
     increaseOpponentScore: () => set((state) => ({ score: state.score + 1 })),
-    decreaseOpponentScore: () => set((state) => ({ score: state.score - 1 })),
-    resetOpponentScore: () => set((state) => ({ score: state.score = 0 })),
-}))
+    resetOpponentScore: () => set(() => ({ score: 0 })),
+}));
 
 
 export const useRPSState = create<RPSState>((set) => ({

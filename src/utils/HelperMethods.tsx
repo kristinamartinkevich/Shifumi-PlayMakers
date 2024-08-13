@@ -1,9 +1,9 @@
 import rock from '../assets/rock.svg';
 import paper from '../assets/paper.svg';
 import scissors from '../assets/scissors.svg';
-import { RPS, Options, GameResult } from '../model/model';
+import { RPS, Options } from '../model/model';
 
-export function getOption(option: RPS) {
+export function getOption(option: RPS | undefined) {
     switch (option) {
         case 'Rock':
             return rock;
