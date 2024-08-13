@@ -1,0 +1,46 @@
+.rps-image {
+  width: 6rem;
+  height: 6rem;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.button {
+  background-color: #F8F8F8;
+  color: black;
+  padding: 1rem 1.5rem 1rem 1.5rem !important;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+
+  font-weight: 475;
+  line-height: 24px;
+  letter-spacing: -0.26px;
+}
+
+.button:hover {
+  background-color: #F1F1F1;
+}
+
+.button:focus {
+  outline: 2px solid #DCDCDE;
+}
+
+.button:disabled {
+  background-color: #F1F1F1;
+  color: #C9C9CC;
+}
+
+.lost {
+  color: #EF2727
+}
+
+.tie {
+  color: #EC980C
+}
+
+.win {
+  color: #019939
+}
